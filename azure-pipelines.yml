@@ -1,0 +1,26 @@
+pool:
+  vmImage: 'ubuntu 16.04'
+
+
+variables:
+  buildConfiguration: 'Release'
+
+steps:
+
+- task: Npm@1
+  displayName: 'npm install'
+  inputs:
+    command: install
+    workingDir: src/shoyuu
+
+- task: Npm@1
+  displayName: 'Build Angular'
+  inputs:
+    command: custom
+    customCommand: run build -- --prod
+    workingDir: src/shoyuu
+
+- task: PublishPipelineArtifact@0
+  inputs:
+    artifactName: 'angular'
+    targetPath: 'src/shoyuu/dist'
