@@ -11,16 +11,16 @@ steps:
   displayName: 'npm install'
   inputs:
     command: install
-    workingDir: src/shoyuu
+    workingDir: src
 
 - task: Npm@1
   displayName: 'Build Angular'
   inputs:
     command: custom
     customCommand: run build -- --prod
-    workingDir: src/shoyuu
+    workingDir: src
 
 - task: PublishPipelineArtifact@0
   inputs:
-    artifactName: 'angular'
-    targetPath: 'src/shoyuu/dist'
+    artifactName: 'shoyuu'
+    targetPath: 'dist'
