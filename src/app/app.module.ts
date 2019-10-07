@@ -3,10 +3,15 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { PictureComponent } from './picture/picture.component';
+import { NguiInViewComponent } from './ngui-in-view.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PictureComponent,
+    NguiInViewComponent
   ],
   imports: [
     BrowserModule,
